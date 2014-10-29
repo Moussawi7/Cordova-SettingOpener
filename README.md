@@ -14,14 +14,15 @@ The plugin creates the object `window.plugins.SettingOpener
 After onDeviceReady, create a local var and startup the plugin like so;
 
 	function onDeviceReady() {
-		window.plugins.SettingOpener.Open("ACTION_ADD_ACCOUNT",function(){
-	 //Operation Success
+    window.plugins.SettingOpener.Open("ACTION_ADD_ACCOUNT",function(){
+	  //Operation Success
 	},function(e){
-	//Operation Fail with error message e
+	  //Operation Fail with error message e
 	});
 	}
 ####Arguments:
-Based on Android Setting Provider http://developer.android.com/reference/android/provider/Settings.html, user can pass the Following arguments.
+Based on Android Setting Provider http://developer.android.com/reference/android/provider/Settings.html.
+User can pass one of the Following arguments.
 
 	1)	ACTION_ADD_ACCOUNT:  Show add account screen for creating a new account. 
 	2)	ACTION_BLUETOOTH_SETTINGS : Show settings to allow configuration of Bluetooth. 
@@ -35,7 +36,7 @@ Based on Android Setting Provider http://developer.android.com/reference/android
 	10) ACTION_WIRELESS_SETTINGS : Show settings to allow configuration of wireless controls such as Wi-Fi, Bluetooth and Mobile networks. 
 
 
-Note that using non-listed action will cause the plugin to fail with error message INVALID_ACTION .
+> Note that using non-listed action will cause the plugin to fail with error message INVALID_ACTION .
 
 ## License ##
 
