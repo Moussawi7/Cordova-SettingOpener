@@ -1,4 +1,4 @@
-# GAPlugin
+# SettingOpener
 
 > Setting Opener plugin for Android. This allows you to Open Settings Pages Programmatically.
 
