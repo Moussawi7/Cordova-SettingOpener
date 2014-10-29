@@ -9,7 +9,7 @@
     cordova plugin add https://github.com/Moussawi7/Cordova-SettingOpener
 	
 ## Usage
-The plugin creates the object `window.plugins.SettingOpener
+The plugin creates the object window.plugins.SettingOpener
 
 After onDeviceReady, create a local var and startup the plugin like so;
 
