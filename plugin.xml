@@ -2,11 +2,11 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="pro.moussawi7.plugins.SettingOpener"
-        version="0.1.0">
+        version="0.2.0">
 
   <name>Setting Opener</name>
   <description>
-  This plugin open Setting Page
+  This plugin open Setting Pages
   </description>
 
   <license>MIT</license>

@@ -2,8 +2,8 @@ function SettingOpener() {
 }
 
 SettingOpener.prototype = {
-  OpenLocation: function (successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, "SettingOpener", "OpenLocation", []);
+  Open: function (action,successCallback, errorCallback) {
+    cordova.exec(successCallback, errorCallback, "SettingOpener", action, []);
   }
 };
 
