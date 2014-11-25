@@ -1,42 +1,29 @@
-# SettingOpener
+# GPSLocator
 
-> Setting Opener plugin for Android. This allows you to Open Settings Pages Programmatically.
+> GPS Locator plugin for Android. This allows you to Obtain geolocation using **locationManager**.
 
 ## Installation:
 
     npm install -g cordova # if you don't have cordova
     cordova create MyProjectFolder com.my.project MyProject && cd MyProjectFolder # if you are just starting
-    cordova plugin add https://github.com/Moussawi7/Cordova-SettingOpener
+    cordova plugin add https://github.com/Moussawi7/Cordova-GPSLocator
+
+## Benefits:
+As you know there a plugin created by apache, but it's slow to detect the geolocation and sometimes you need to restart the device in order to work.
+GPSLocator user GPS/Network provider to get the device geolocation where you will get the geolocation faster and without the need to restart the device.
 	
 ## Usage
-The plugin creates the object window.plugins.SettingOpener
+The plugin creates the object window.plugins.GPSLocator
 
 After onDeviceReady, create a local var and startup the plugin like so;
 
 	function onDeviceReady() {
-    window.plugins.SettingOpener.Open("ACTION_ADD_ACCOUNT",function(){
-	  //Operation Success
-	},function(e){
-	  //Operation Fail with error message e
-	});
+   	    window.plugins.GPSLocator.getLocation(function(result){
+		alert(JSON.stringify(result));//result[0]:latitude,result[1]:longitude.
+		},function(e){
+			alert(JSON.stringify(e));//Error Message
+		});
 	}
-####Arguments:
-Based on Android Setting Provider http://developer.android.com/reference/android/provider/Settings.html.
-User can pass one of the Following arguments.
-
-	1)	ACTION_ADD_ACCOUNT:  Show add account screen for creating a new account. 
-	2)	ACTION_BLUETOOTH_SETTINGS : Show settings to allow configuration of Bluetooth. 
-	3)  ACTION_DATA_ROAMING_SETTINGS: Show settings for selection of 2G/3G. 
-	4)  ACTION_DATE_SETTINGS : Show settings to allow configuration of date and time. 
-	5)  ACTION_DISPLAY_SETTINGS : Show settings to allow configuration of display. 
-	6)  ACTION_LOCATION_SOURCE_SETTINGS : Show settings to allow configuration of current location sources. 
-	7)  ACTION_MANAGE_APPLICATIONS_SETTINGS : Show settings to manage installed applications. 
-	8)  ACTION_MEMORY_CARD_SETTINGS : Show settings for memory card storage. 
-	9)  ACTION_SETTINGS : Show system settings. 
-	10) ACTION_WIRELESS_SETTINGS : Show settings to allow configuration of wireless controls such as Wi-Fi, Bluetooth and Mobile networks. 
-
-
-> Note that using non-listed action will cause the plugin to fail with error message INVALID_ACTION .
 
 ## License ##
 
