@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="pro.moussawi7.plugins.GPSLocator"
-        version="0.1.0">
+        id="pro.moussawi7.plugins.SettingOpener"
+        version="0.2.0">
 
-  <name>GPS Locator</name>
+  <name>Setting Opener</name>
   <description>
-  This plugin get device geolocation from GPS/Network.
+  This plugin open Setting Pages
   </description>
 
   <license>MIT</license>
@@ -15,25 +15,23 @@
     <engine name="cordova" version=">=3.0.0"/>
   </engines>
 
-  <js-module src="www/GPSLocator.js" name="GPSLocator">
-    <clobbers target="window.plugins.GPSLocator" />
+  <js-module src="www/SettingOpener.js" name="SettingOpener">
+    <clobbers target="window.plugins.SettingOpener" />
   </js-module>
 
   <!-- android -->
   <platform name="android">
+
     <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="GPSLocator">
-        <param name="android-package" value="pro.moussawi7.plugins.GPSLocator" />
+      <feature name="SettingOpener">
+        <param name="android-package" value="pro.moussawi7.plugins.SettingOpener" />
       </feature>
     </config-file>
 
-       <config-file target="AndroidManifest.xml" parent="/*">
-            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-        </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+    </config-file>
 
-    <source-file src="src/android/pro/moussawi7/plugins/GPSLocator.java" target-dir="src/pro/moussawi7/plugins"/>
-	<source-file src="src/android/pro/moussawi7/plugins/GPSTracker.java" target-dir="src/pro/moussawi7/plugins"/>
+    <source-file src="src/android/pro/moussawi7/plugins/SettingOpener.java" target-dir="src/pro/moussawi7/plugins"/>
   </platform>
 
 </plugin>
